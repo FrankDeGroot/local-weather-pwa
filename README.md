@@ -4,7 +4,7 @@ A progressive web application that shows your current weather plus a five day fo
 
 ```bash
 yarn
-yarn run dev
+DARK_SKY_API_KEY=<Sign Up on https://darksky.net and set the key shown on /dev> yarn run dev
 ```
 
 Open up [localhost:3000](http://localhost:3000) and start clicking around.

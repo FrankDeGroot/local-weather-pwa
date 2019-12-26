@@ -21,7 +21,7 @@
 	
 	function getWeather(longitude, latitude) {
 		// WEATHER API GOES HERE
-		apiUri = `https://......./api/weather?longitude=${longitude}&latitude=${latitude}`
+		apiUri = `/api/weather?longitude=${longitude}&latitude=${latitude}`
 		fetch(apiUri)
 		  .then(r => r.json())
 		  .then(function(data){
