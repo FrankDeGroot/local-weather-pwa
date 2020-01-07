@@ -6,8 +6,8 @@
   let latitude;
   let dataLoading = true;
   let weather;
-  let days = Array();
-  let mini = 'mini';
+  const days = [];
+  const mini = 'mini';
   let apiUri;
   export let currentCondition = 'clear-day';
 
@@ -16,11 +16,11 @@
   $: dataLoading;
   $: days;
 
-  function getWeather(longitude, latitude) {
+  function getWeather() {
     apiUri = `/api/weather?longitude=${longitude}&latitude=${latitude}`;
     fetch(apiUri)
       .then(r => r.json())
-      .then(function(data) {
+      .then(data => {
         weather = data;
         currentCondition = weather.currently.icon;
         getDays(weather.daily);
@@ -29,11 +29,11 @@
   }
 
   function getDays(daily) {
-    var data = daily.data.slice(0, 5);
+    const data = daily.data.slice(0, 5);
 
     data.forEach(element => {
-      var a = new Date(element.time * 1000);
-      var dayStrings = [
+      const a = new Date(element.time * 1000);
+      const dayStrings = [
         'Sunday',
         'Monday',
         'Tuesday',
@@ -58,7 +58,7 @@
   function setLocation(position) {
     longitude = position.coords.longitude;
     latitude = position.coords.latitude;
-    getWeather(longitude, latitude);
+    getWeather();
   }
 
   function locationError() {
@@ -96,7 +96,7 @@
 </style>
 
 <svelte:head>
-  {#if weather != undefined}
+  {#if weather !== undefined}
     <title>Weather | {weather.timezone}</title>
   {:else}
     <title>Weather</title>
@@ -106,7 +106,7 @@
 
 <main>
   {#if !dataLoading}
-    {#if weather != undefined}
+    {#if weather !== undefined}
       <div class="uk-container uk-container-xsmall">
         <div class="uk-margin-small-top">
           <h1 class="uk-text-center">Local Weather</h1>

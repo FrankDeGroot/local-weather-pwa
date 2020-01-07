@@ -8,7 +8,7 @@
 </style>
 
 <div class="uk-padding-remove">
-  {#if condition == 'none'}
+  {#if condition === 'none'}
     <div class="icon {mini} sun-shower">
       <div class="cloud"></div>
       <div class="sun">
@@ -18,7 +18,7 @@
     </div>
   {/if}
 
-  {#if condition == 'none'}
+  {#if condition === 'none'}
     <div class="icon {mini} thunder-storm">
       <div class="cloud"></div>
       <div class="lightning">
@@ -28,21 +28,21 @@
     </div>
   {/if}
 
-  {#if condition == 'cloudy'}
+  {#if condition === 'cloudy'}
     <div class="icon {mini} cloudy">
       <div class="cloud"></div>
       <div class="cloud"></div>
     </div>
   {/if}
 
-  {#if condition == 'fog'}
+  {#if condition === 'fog'}
     <div class="icon {mini} cloudy">
       <div class="cloud"></div>
       <div class="cloud"></div>
     </div>
   {/if}
 
-  {#if condition == 'snow'}
+  {#if condition === 'snow'}
     <div class="icon {mini} flurries">
       <div class="cloud"></div>
       <div class="snow">
@@ -52,7 +52,7 @@
     </div>
   {/if}
 
-  {#if condition == 'sleet'}
+  {#if condition === 'sleet'}
     <div class="icon {mini} flurries">
       <div class="cloud"></div>
       <div class="snow">
@@ -62,7 +62,7 @@
     </div>
   {/if}
 
-  {#if condition == 'clear-day'}
+  {#if condition === 'clear-day'}
     <div class="icon {mini} sunny">
       <div class="sun">
         <div class="rays"></div>
@@ -70,20 +70,20 @@
     </div>
   {/if}
 
-  {#if condition == 'clear-night'}
+  {#if condition === 'clear-night'}
     <div class="icon {mini} night">
       <div class="moon"></div>
     </div>
   {/if}
 
-  {#if condition == 'partly-cloudy-night'}
+  {#if condition === 'partly-cloudy-night'}
     <div class="icon {mini} partly-cloudy-night">
       <div class="moon"></div>
       <div class="cloud"></div>
     </div>
   {/if}
 
-  {#if condition == 'partly-cloudy-day'}
+  {#if condition === 'partly-cloudy-day'}
     <div class="icon {mini} partly-cloudy-day">
       <div class="cloud"></div>
       <div class="sun">
@@ -92,7 +92,7 @@
     </div>
   {/if}
 
-  {#if condition == 'rain'}
+  {#if condition === 'rain'}
     <div class="icon {mini} rainy">
       <div class="cloud"></div>
       <div class="rain"></div>
