@@ -1,4 +1,4 @@
-const https = require('https');
+import * as https from 'https';
 
 const { DARK_SKY_API_KEY } = process.env;
 
@@ -10,13 +10,12 @@ export async function get(req, res) {
   const { query } = req;
   const { latitude } = query;
   const { longitude } = query;
-  const body = [];
   https.get(
     `https://api.darksky.net/forecast/${DARK_SKY_API_KEY}/${latitude},${longitude}?units=auto`,
     resp =>
       resp
-        .on('data', chunk => body.push(chunk))
-        .on('end', () => res.end(body.join('')))
+        .on('data', chunk => res.write(chunk))
+        .on('end', () => res.end())
         .on('error', e => res.end(e))
   );
 }
