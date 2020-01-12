@@ -4,4 +4,4 @@ module.exports = {
   svelteStrictMode: true,
   tabWidth: 2,
   trailingComma: 'es5',
-}
+};

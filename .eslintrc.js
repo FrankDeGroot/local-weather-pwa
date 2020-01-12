@@ -2,20 +2,14 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    node: true
+    node: true,
   },
-  extends: [
-    'eslint:recommended',
-    'airbnb-base',
-    'prettier'
-  ],
+  extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
-  ignorePatterns: [
-    'node_modules/',
-  ],
+  ignorePatterns: ['node_modules/'],
   overrides: [
     {
       files: ['**/*.js'],
@@ -30,17 +24,14 @@ module.exports = {
         'import/no-mutable-exports': 'off',
         'no-multiple-empty-lines': 'off',
         'no-unused-expressions': 'off',
-      }
+      },
     },
   ],
   parserOptions: {
     ecmaVersion: 2019,
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'prettier',
-    'svelte3',
-  ],
+  plugins: ['prettier', 'svelte3'],
   rules: {
     'arrow-parens': 'off',
     'import/no-extraneous-dependencies': 'off',
@@ -48,5 +39,5 @@ module.exports = {
     'no-restricted-globals': 'off',
     'no-restricted-syntax': 'off',
     'no-use-before-define': 'off',
-  }
-}
+  },
+};
